@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {%if title%}
+        <title>{{title}} - zhiquan</title>
+        {%else%}
+        <title> default title</title>
+        {%endif%}
+    </head>
+    <body>
+        <div>Home Link <a href="/index">Click me</a></div>
+        <hr>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
