@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{{ name }}'s website</title>
-    </head>
-    <body>
-        <h2>
-            {{ name }} watch list
-        </h2>
-        <p>{{ movies|length }} Titles</p>
-        <ul>
-            {% for movie in movies %}
-                <li>{{ movie.title }} - {{ movie.year }}</li>
-            {% endfor %}
-        </ul>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ name }}'s website</title>
+    <link rel="icon" href="{{url_for('static',filename = 'images/image0.jpg')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
+</head>
+
+<body>
+    <h2>
+        <img alt="Avatar" class="avator" src="{{url_for('static',filename='images/image0.jpg')}}">
+        {{ name }} watch list
+    </h2>
+    <p>{{ movies|length }} Titles</p>
+    <ul class="movie-list">
+        {% for movie in movies %}
+        <li>{{ movie.title }} - {{ movie.year }}</li>
+        {% endfor %}
+    </ul>
+    <image alt='Walking ' class="totoro" src="{{url_for('static',filename='images/image0.jpg')}}">
+</body>
+
 </html>

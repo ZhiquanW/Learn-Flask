@@ -1,8 +1,9 @@
 from flask import Flask
+import flask
 from flask import url_for
 
 app = Flask(__name__)
-user_name = 'Grey Li'
+user_name = 'Zhiquan'
 user_movies = [
 {'title': 'My Neighbor Totoro', 'year': '1988'},
 {'title': 'Dead Poets Society', 'year': '1989'},
@@ -18,7 +19,7 @@ user_movies = [
 
 @app.route('/')
 def hello():
-    return '<h1>Hello Totorsssssso!</h1><img src="http://helloflask.com/totoro.gif">'
+    return flask.render_template('index.html',name=user_name,movies = user_movies)
 
 @app.route('/user/<name>')
 def user_page(name):
